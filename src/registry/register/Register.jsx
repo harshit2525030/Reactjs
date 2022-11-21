@@ -1,10 +1,9 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "react-bootstrap";
-import "./Register.css";
-import axios from "axios";
 import toastr from "toastr";
 import FormInput from "./FormInput";
+import "./Register.css";
 
 export const Register = () => {
   const navigate = useNavigate();
