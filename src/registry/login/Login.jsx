@@ -64,7 +64,6 @@ export const Login = () => {
       if (result.data.code === 1) return toastr.error(result.data.message);
       // Set local storage... 
       localStorage.setItem("user",  JSON.stringify(result.data.data));
-      
       toastr.success(result.data.message);
       navigate("/home");
     } catch (err) {

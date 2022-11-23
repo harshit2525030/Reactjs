@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+// Protected route implemented using local storage data...
 function ProtectedRoutes(props) {
   const { Component } = props;
   const navigate = useNavigate();
