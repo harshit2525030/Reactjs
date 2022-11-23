@@ -1,13 +1,14 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toastr from "toastr";
 import FormInput from "./FormInput";
 import "./Register.css";
+import axios from "../../api/axios";
+
+const REGISTER_URL = "authaccount/registration";
 
 export const Register = () => {
   const navigate = useNavigate();
-  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [values, setValues] = useState({
     username: "",
@@ -64,23 +65,27 @@ export const Register = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      setError("");
       setLoading(true);
       const payload = {
         name: values.username,
         email: values.email,
         password: values.password,
       };
-      const result = await axios.post(
-        "http://restapi.adequateshop.com/api/authaccount/register",
-        payload
-      );
-      console.log(payload);
+      // const result = await axios.post(
+      //   "http://restapi.adequateshop.com/api/authaccount/register",
+      //   payload
+      // );
+      const result = await axios.post(REGISTER_URL, JSON.stringify(payload), {
+        headers: { "Content-Type": "application/json" },
+        withCredentials: false,
+      });
+      console.warn(result?.data.message);
+      console.log(result?.data.data);
       if (result.data.code === 1) return toastr.error(result.data.message);
       toastr.success(result.data.message);
       navigate("/login");
     } catch {
-      setError("Failed to sign in");
+      console.log("Failed to sign in");
     }
     setLoading(false);
   }
@@ -102,8 +107,10 @@ export const Register = () => {
             onChange={onChange}
           />
         ))}
-        
-        <button disabled={loading} type="submit">Register</button>
+
+        <button type="submit">
+          Register
+        </button>
 
         <div style={{ paddingBottom: "30px" }}>
           <Link to="/">Return to Login</Link>

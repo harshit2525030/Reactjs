@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import "./Login.css";
-import axios from "axios";
 import { useToastr } from "../toastr";
 import FormInput from "./FormInput";
+import "./Login.css";
+import axios from "../../api/axios";
+
+const LOGIN_URL = "authaccount/login";
 
 export const Login = () => {
   const navigate = useNavigate();
-  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [values, setValues] = useState({
     username: "",
@@ -45,22 +46,29 @@ export const Login = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      setError("");
       setLoading(true);
       const payload = {
         email: values.email,
         password: values.password,
       };
-      const result = await axios.post(
-        "http://restapi.adequateshop.com/api/authaccount/login",
-        payload
-      );
-      console.log(result);
+      // const result = await axios.post(
+      //   "http://restapi.adequateshop.com/api/authaccount/login",
+      //   payload
+      // );
+      const result = await axios.post(LOGIN_URL, JSON.stringify(payload), {
+        headers: { "Content-Type": "application/json" },
+        withCredentials: false,
+      });
+      console.warn(result?.data.message);
+      console.log(result?.data.data);
       if (result.data.code === 1) return toastr.error(result.data.message);
+      // Set local storage... 
+      localStorage.setItem("user",  JSON.stringify(result.data.data));
+      
       toastr.success(result.data.message);
       navigate("/home");
-    } catch {
-      setError("Failed to sign in");
+    } catch (err) {
+      console.log("Failed to sign in");
     }
     setLoading(false);
   }
@@ -83,9 +91,7 @@ export const Login = () => {
           />
         ))}
 
-        <button disabled={loading} type="submit">
-          Login
-        </button>
+        <button type="submit">Login</button>
 
         <div style={{ paddingBottom: "30px" }}>
           <Link to="/register">Return to Register</Link>

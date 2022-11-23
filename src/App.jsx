@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./registry/login/Login";
 import Register from "./registry/register/Register";
+import ProtectedRoutes from "./registry/ProtectedRoutes";
 
 function App() {
   return (
@@ -11,7 +12,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/home" element={<Home />} />
+          {/* <Route path="/home" element={<Home />} /> */}
+
+          {/* Protected Routes...  */}
+          <Route path="/home" element={<ProtectedRoutes Component={Home} />} />
+        
         </Routes>
       </div>
     </Router>
