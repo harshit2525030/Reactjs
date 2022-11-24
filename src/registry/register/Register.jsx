@@ -9,7 +9,6 @@ const REGISTER_URL = "authaccount/registration";
 
 export const Register = () => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -65,7 +64,6 @@ export const Register = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      setLoading(true);
       const payload = {
         name: values.username,
         email: values.email,
@@ -87,7 +85,6 @@ export const Register = () => {
     } catch {
       console.log("Failed to sign in");
     }
-    setLoading(false);
   }
 
   const onChange = (e) => {

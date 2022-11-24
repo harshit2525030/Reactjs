@@ -9,7 +9,6 @@ const LOGIN_URL = "authaccount/login";
 
 export const Login = () => {
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
   const [values, setValues] = useState({
     username: "",
     email: "",
@@ -36,7 +35,7 @@ export const Login = () => {
       name: "password",
       type: "password",
       placeholder: "Enter your password...",
-      errorMessage: "Password should be 6-12 characters",
+      errorMessage: "Password should be numeric 6-12 characters",
       label: "Password",
       pattern: "^[0-9]{6,12}$",
       required: true,
@@ -46,7 +45,6 @@ export const Login = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     try {
-      setLoading(true);
       const payload = {
         email: values.email,
         password: values.password,
@@ -69,7 +67,6 @@ export const Login = () => {
     } catch (err) {
       console.log("Failed to sign in");
     }
-    setLoading(false);
   }
 
   const onChange = (e) => {
