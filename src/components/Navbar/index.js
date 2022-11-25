@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import {
   MobileIcon,
   Nav,
+  Div,
   NavbarContainer,
   NavLogo,
   NavMenu,
@@ -15,11 +16,11 @@ import {
   LogoImage,
 } from "./NavbarElements";
 
-const Navbar = () => {
+const Navbar = ({ toggle }) => {
   const navigate = useNavigate();
 
-  function removeUser(e) {
-    e.preventDefault();
+  function removeUserData(e) {
+    e.preventDefault(); // will not run till the 'removeUserData()' function triggered...
     localStorage.clear();
     navigate("/");
   }
@@ -28,15 +29,15 @@ const Navbar = () => {
     <>
       <Nav>
         <NavbarContainer>
-          <Nav>
+          <Div>
             <Link to="/home">
               <LogoImage src={require("./images/logo.png")} />
             </Link>
             <Link>
               <NavLogo>myLMS</NavLogo>
             </Link>
-          </Nav>
-          <MobileIcon>
+          </Div>
+          <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>
 
@@ -56,7 +57,7 @@ const Navbar = () => {
           </NavMenu>
 
           <NavBtn>
-            <LogoutBtn onClick={removeUser}>Logout</LogoutBtn>
+            <LogoutBtn onClick={removeUserData}>Logout</LogoutBtn>
           </NavBtn>
         </NavbarContainer>
       </Nav>
