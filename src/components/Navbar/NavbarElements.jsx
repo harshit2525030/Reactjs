@@ -43,7 +43,7 @@ export const LogoImage = styled.img`
 `;
 
 export const NavLogo = styled.div`
-  color: #18ecdc;
+  color: #fff;
   justify-self: flex-start;
   cursor: pointer;
   font-size: 2rem;
@@ -58,7 +58,7 @@ export const NavLogo = styled.div`
   }
 
   &:hover {
-    color: #15cdfc;
+    color: #18ecdc;
     text-decoration: none;
   }
 `;
@@ -131,6 +131,17 @@ export const NavBtn = styled.nav`
 
   @media screen and (max-width: 768px) {
     display: none;
+  }
+`;
+
+export const ProfileDiv = styled.div`
+  /* padding: 20px 8px 20px 0px; */
+  width: 40px;
+  margin-right: 24px;
+  color: #fff;
+
+  &:hover {
+    color: #18ecdc;
   }
 `;
 

@@ -1,0 +1,92 @@
+#dropdown {
+  background: #000025;
+  border: none;
+}
+
+#dropdown:hover {
+  background: #000025;
+  border: none;
+}
+
+#dropdown_toggle {
+  background: #000025;
+  border: none;
+}
+
+#dropdown_toggle:hover {
+  background: #000025;
+}
+
+#dropdown_menu {
+  background: #000025;
+  min-width: 170px;
+  border-radius: 0px 15px 0px 15px;
+  border: 1px solid rgba(122, 122, 122, 0.411);
+}
+
+#dropdown_profile_name {
+  color: #18ecdc;
+  padding: 5px 5px 0px 15px;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+#dropdown_profile_name:hover {
+  background: #000025;
+  color: #18ecdc;
+  text-decoration: none;
+  transition: 0.1s all ease;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+#dropdown_profile_email {
+  color: #18ecdc;
+  padding: 5px 5px 0px 15px;
+  font-size: 1.2rem;
+}
+
+#dropdown_profile_email:hover {
+  background: #000025;
+  color: #18ecdc;
+  text-decoration: none;
+  transition: 0.1s all ease;
+  font-size: 1.2rem;
+}
+
+#dropdown_hr_div {
+  margin: 0px 10px;
+}
+#dropdown_hr {
+  border: 0;
+  height: 2px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.555);
+  margin: 15px 0 0px;
+}
+
+#dropdown_item {
+  color: #fff;
+  padding: 8px 20px;
+}
+
+#dropdown_item:hover {
+  background: #000025;
+  color: #18ecdc;
+  text-decoration: none;
+  transition: 0.1s all ease;
+  font-size: 1.5rem;
+}
+
+#dropdown_item_logout {
+  color: #fff;
+  padding: 10px 20px 20px 20px;
+}
+
+#dropdown_item_logout:hover {
+  background: #000025;
+  color: #18ecdc;
+  text-decoration: none;
+  transition: 0.1s all ease;
+  font-size: 1.5rem;
+}

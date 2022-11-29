@@ -12,7 +12,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          {/* <Route path="/home" element={<Home />} /> */}
 
           {/* Protected Routes...  */}
           <Route path="/home" element={<ProtectedRoutes Component={Home} />} />

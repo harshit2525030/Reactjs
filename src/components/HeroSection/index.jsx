@@ -31,7 +31,7 @@ const HeroSection = () => {
           your next payment...
         </HeroP>
         <HeroBtnWrapper>
-          <Button to="/register" onMousEnter={onHover} onMouseLeave={onHover}>
+          <Button to="/register" onMouseEnter={onHover} onMouseLeave={onHover}>
             Get started <ArrowForward />
           </Button>
         </HeroBtnWrapper>
