@@ -33,7 +33,7 @@ const Sidebar = ({ isOpen, toggle }) => {
 
         <Div>
           <Link to="/home">
-            <LogoImage src={require("./images/logo.png")} />
+            <LogoImage src={require("./assets/logo.png")} />
           </Link>
           <Link>
             <NavLogo>Krispace</NavLogo>
@@ -54,11 +54,16 @@ const Sidebar = ({ isOpen, toggle }) => {
             <SidebarLink to="contact" onClick={toggle}>
               Contact Us
             </SidebarLink>
+            <SidebarLink to="contact" onClick={toggle}>
+              Settings & Privacy
+            </SidebarLink>
+            <SidebarLink to="contact" onClick={toggle}>
+              Notifications
+            </SidebarLink>
+            <SideBtnWrap>
+              <SidebarRoute onClick={removeUserData}>Logout</SidebarRoute>
+            </SideBtnWrap>
           </SidebarMenu>
-
-          <SideBtnWrap>
-            <SidebarRoute onClick={removeUserData}>Logout</SidebarRoute>
-          </SideBtnWrap>
         </SidebarWrapper>
       </SidebarContainer>
     </>

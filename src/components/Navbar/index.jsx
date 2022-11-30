@@ -15,7 +15,7 @@ import {
   NavLinks,
   NavLogo,
   NavMenu,
-  ProfileDiv
+  ProfileDiv,
 } from "./NavbarElements";
 
 const Navbar = ({ toggle }) => {
@@ -36,7 +36,7 @@ const Navbar = ({ toggle }) => {
           {/* --------Logo-------- */}
           <Div>
             <Link to="/home">
-              <LogoImage src={require("./images/logo.png")} />
+              <LogoImage src={require("./assets/logo.png")} />
             </Link>
             <Link>
               <NavLogo>Krispace</NavLogo>
@@ -73,7 +73,7 @@ const Navbar = ({ toggle }) => {
                 variant={{ color: "#000025" }}
               >
                 <ProfileDiv>
-                  <FaUserCircle size={28}/>
+                  <FaUserCircle size={28} />
                 </ProfileDiv>
               </Dropdown.Toggle>
 

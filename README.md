@@ -18,6 +18,9 @@ Requirement:
 * In case of success, show success toastr message "You are successfully registered" and redirect to login page.
 * If case of error, show error toastr message that you will get from api.
 
+Svg's and Images reference:
+* https://undraw.co/search
+* https://www.pexels.com/video/digital-projection-of-abstract-geometrical-lines-3129671/
 
 # Getting Started with Create React App
 

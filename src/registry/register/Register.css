@@ -7,7 +7,7 @@
       rgba(255, 255, 255, 0.7),
       rgba(255, 255, 255, 0.3)
     ),
-    url("../../assets/bg.jpeg");
+    url("../assets/bg.jpeg");
   background-size: cover;
   background-position: center;
 }
