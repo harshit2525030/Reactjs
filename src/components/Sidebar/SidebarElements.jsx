@@ -40,19 +40,19 @@ export const Icon = styled.div`
 export const Div = styled.div`
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   font-size: 1rem;
 `;
 
 export const LogoImage = styled.img`
-  padding: 0px 8px 20px 0px;
+  padding: 25px 8px 20px 0px;
   width: 40px;
   margin-left: 10px;
 `;
 
 export const NavLogo = styled.div`
   color: #18ecdc;
-  /* justify-self: flex-start; */
+  justify-self: flex-start;
   cursor: pointer;
   font-size: 2rem;
   display: flex;
@@ -73,7 +73,7 @@ export const SidebarWrapper = styled.div`
 export const SidebarMenu = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(8, 55px);
+  grid-template-rows: repeat(9, 60px);
   text-align: center;
 `;
 
@@ -106,7 +106,7 @@ export const SideBtnWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 20%;
+  padding-top: 30px;
   /* padding-left: 12px; */
 `;
 

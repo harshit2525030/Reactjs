@@ -142,6 +142,7 @@ export const ProfileDiv = styled.div`
 
   &:hover {
     color: #18ecdc;
+    transition: 0.3s all ease-in-out;
   }
 `;
 

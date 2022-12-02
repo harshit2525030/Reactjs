@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import HeroSection from "./HeroSection";
-import InfoSection from "./InfoSection.jsx";
-import { homeObjOne } from "./InfoSection.jsx/Data";
+import InfoSection from "./InfoSection";
 import Navbar from "./Navbar";
 import Sidebar from "./Sidebar";
+import UserList from "./UserList";
 
 function HomePage() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +17,8 @@ function HomePage() {
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} />
       <HeroSection />
-      <InfoSection {...homeObjOne} />
+      <InfoSection />
+      <UserList />
     </>
   );
 }

@@ -10,10 +10,8 @@ const LOGIN_URL = "authaccount/login";
 export const Login = () => {
   const navigate = useNavigate();
   const [values, setValues] = useState({
-    username: "",
     email: "",
     password: "",
-    confirmPassword: "",
   });
   const toastr = useToastr();
 
@@ -60,8 +58,8 @@ export const Login = () => {
       console.warn(result?.data.message);
       console.log(result?.data.data);
       if (result.data.code === 1) return toastr.error(result.data.message);
-      // Set local storage... 
-      localStorage.setItem("user",  JSON.stringify(result.data.data));
+      // Set local storage...
+      localStorage.setItem("user", JSON.stringify(result.data.data));
       toastr.success(result.data.message);
       navigate("/home");
     } catch (err) {
