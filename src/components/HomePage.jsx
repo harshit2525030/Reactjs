@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import HeroSection from "./HeroSection";
-import InfoSection from "./InfoSection";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
-import UserList from "./UserList";
+import HeroSection from "./03_HeroSection";
+import InfoSection from "./04_InfoSection";
+import Navbar from "./02_Navbar";
+import Sidebar from "./01_Sidebar";
+import UserList from "./05_UserList";
 
 function HomePage() {
   const [isOpen, setIsOpen] = useState(false);

@@ -16,7 +16,7 @@ const UserList = () => {
       const result = await axios.get(USER_LIST, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${user.Token}`,
+          "Authorization": `Bearer ${user.Token}`,
         },
         withCredentials: false,
       });
