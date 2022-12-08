@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { User, UserContainer, UserProfileImage } from "./UserElements";
+import {
+  User,
+  UserContainer,
+  UserProfileImage,
+  UserWaveSvg,
+} from "./UserElements";
 import "./index.css";
 import axios from "../../api/axios";
+import Wave_Svg from "./assets/wave.svg";
 
 const USER_LIST = "users?page=1";
 
@@ -16,7 +22,7 @@ const UserList = () => {
       const result = await axios.get(USER_LIST, {
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${user.Token}`,
+          Authorization: `Bearer ${user.Token}`,
         },
         withCredentials: false,
       });
@@ -29,6 +35,7 @@ const UserList = () => {
 
   return (
     <>
+      <UserWaveSvg src={Wave_Svg} alt="wave-svg" />
       <User>
         <UserContainer>
           <div className="container">

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const User = styled.div`
-  background: #000025;
+  background: #18ecdc;
   display: flex;
   justify-content: center;
   height: 632px;
@@ -26,4 +26,9 @@ export const UserProfileImage = styled.img`
     box-shadow: 0 0 0 12px white;
     transform: scale(0.7);
   }
+`;
+
+export const UserWaveSvg = styled.img`
+  position: relative;
+  z-index: 1;
 `;
